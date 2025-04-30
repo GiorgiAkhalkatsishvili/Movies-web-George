@@ -1,0 +1,103 @@
+
+.bannerComponent .banner-inner{
+  background-image: linear-gradient(to left, transparent, black 150%), url('../../assets/hero_banner.jpg');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.bannerComponent .banner-inner .banner-headings{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 60px;
+  padding-bottom: 100px;
+}
+
+.bannerComponent .banner-inner .banner-image{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  padding-left: 22px;
+  padding-top: 150px;
+}
+
+.bannerComponent .banner-inner .banner-image img{
+  width: 36px;
+  height: 50px;
+}
+
+.bannerComponent .banner-inner .banner-image h1{
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text{
+height: auto;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text h1{
+font-size: 64px;
+color: #fff;
+font-family: jung;
+font-weight: 400;
+max-width: 390px;
+text-align: left;
+margin: 0;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph{
+  margin-top: 26px;
+  max-width: 480px;
+  width: 100%;
+  margin: 0;
+  height: auto;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
+  color: #fff;
+  font-size: 20px;
+  font-family: jung;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.bannerComponent .banner-btns{
+  display: flex;
+  gap: 14px;
+}
+
+.bannerComponent .banner-btns button{
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.bannerComponent .banner-btns .btnOne button{
+cursor: pointer;
+padding: 5px 15px;
+background-color: #fff;
+border: solid 1px #fff;
+}
+
+.bannerComponent .banner-btns .btnTwo button{
+background-color: #898080;
+border: solid 1px #898080;
+color: #fff;
+padding: 5px 15px;
+cursor: pointer;
+}
+
+.bannerComponent .banner-btns button svg{
+  width: 37px;
+  height: 33px;
+}
