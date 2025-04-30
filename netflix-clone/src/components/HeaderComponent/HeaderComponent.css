@@ -6,6 +6,19 @@
   z-index: 9;
 }
 
+.headerComponent .header-inner .main-netflix-heading{
+  display: flex;
+  gap: 7px;
+}
+
+.headerComponent .header-inner .main-netflix-heading p{
+color: #fff;
+font-size: 16px;
+position: absolute;
+left: 200px;
+top: 30px;
+}
+
 .headerComponent .header-inner .main-netflix-heading img{
   width: 175px;
   height: 60px;
@@ -73,4 +86,22 @@ fill: red;
 
 .headerComponent .header-inner .main-header-elements .header-icons-list .bell:hover svg path{
 fill: red;
+}
+
+@media only screen and (max-width: 1030px){
+  .headerComponent .header-inner .main-header-elements .nav-links-list{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .headerComponent .header-inner .main-netflix-heading img{
+    width: 120px;
+    height: 45px;
+  }
+
+  .headerComponent .header-inner .main-netflix-heading p{
+    left: 150px;
+    font-size: 15px;
+  }
 }

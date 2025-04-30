@@ -101,3 +101,39 @@ cursor: pointer;
   width: 37px;
   height: 33px;
 }
+
+@media only screen and (max-width: 600px) {
+  .bannerComponent .banner-inner{
+    width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 400px;
+  }
+
+    .bannerComponent .banner-inner .banner-image{
+      padding-top: 20px;
+    }
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text h1{
+  font-size: 45px;
+}
+
+.bannerComponent .banner-inner .banner-image img{
+  width: 30px;
+  height: 40px;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
+  font-size: 16px;
+  padding-right: 20px;
+}
+
+.bannerComponent .banner-btns button svg{
+  width: 25px;
+  height: 25px;
+}
+
+.bannerComponent .banner-btns .btnOne button{
+  font-size: 19px;
+}
+}

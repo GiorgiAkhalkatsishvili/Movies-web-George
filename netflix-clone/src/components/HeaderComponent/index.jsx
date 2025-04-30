@@ -8,7 +8,8 @@ const HeaderComponent = () => {
       <div className="header-inner">
         <div className="main-header-elements">
           <div className="main-netflix-heading">
-         <img src={netflixText} alt="" />
+            <img src={netflixText} alt="" />
+            <p>CLONE</p>
         </div>
         <div className="nav-links-list">
           <ul>
