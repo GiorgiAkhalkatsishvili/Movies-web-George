@@ -1,104 +1,42 @@
-import React, { useEffect, useRef } from 'react'
-import './PopularMoviesComponent.css'
-import cards_data from '../../assets/cards-data/cards';
-
+import React from 'react';
+import './PopularMoviesComponent.css';
+import CardsComponent from '../CardsComponent';
 
 const PopularMoviesComponent = () => {
-
   return (
     <div className='popularMoviesComponent'>
       <div className="inner">
-        <div className="main-heading">
-          <h1>Popular on Netflix</h1>
-        </div>
         <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
+          <CardsComponent title={"Popular on Netflix"} category={"now_playing"} />
         </div>
         <div className="second-cards">
-          <div className="bottom-heading">
-          <h1>New On Netflix</h1>
-        </div>
-        <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
-        </div>
+          <div className="cards-list">
+            <CardsComponent title="New On Netflix" category={"top_rated"} />
+          </div>
         </div>
         <div className="second-cards">
-          <div className="bottom-heading">
-          <h1>Hollywood Movies</h1>
-        </div>
-        <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
-        </div>
+          <div className="cards-list">
+            <CardsComponent title="Hollywood Movies" category={"popular"} />
+          </div>
         </div>
         <div className="second-cards">
-          <div className="bottom-heading">
-          <h1>Horror Movies</h1>
-        </div>
-        <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
-        </div>
+          <div className="cards-list">
+            <CardsComponent title="Horror Movies" category={"upcoming"} />
+          </div>
         </div>
         <div className="second-cards">
-          <div className="bottom-heading">
-          <h1>Action Movies</h1>
-        </div>
-        <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
-        </div>
+          <div className="cards-list">
+            <CardsComponent title="Action Movies" category="now_playing" />
+          </div>
         </div>
         <div className="second-cards">
-          <div className="bottom-heading">
-          <h1>Get In on the Action</h1>
-        </div>
-        <div className="cards-list">
-          {cards_data.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img src={item.image} alt="" />
-            <p>{item.name}</p>
-            </div>
-        </div>
-      ))}
-        </div>
+          <div className="cards-list">
+            <CardsComponent title="Get In on the Action" category="popular" />
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PopularMoviesComponent
+export default PopularMoviesComponent;

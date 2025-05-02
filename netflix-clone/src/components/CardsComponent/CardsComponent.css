@@ -1,0 +1,36 @@
+
+.cardsComponent  .cards-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  padding-right: 34px;
+}
+
+.cardsComponent h1{
+  color: #fff;
+    font-size: 32px;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 17px;
+}
+
+.cardsComponent .cards-list::-webkit-scrollbar {
+  display: none;
+}
+
+.cardsComponent .cards {
+  position: relative;
+}
+
+.cardsComponent .cards p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cardsComponent .cards img {
+  max-height: 168px;
+  height: 100vh;
+  cursor: pointer;
+}
