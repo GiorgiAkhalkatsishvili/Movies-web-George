@@ -1,14 +1,10 @@
 import React from 'react'
 import './LoginPage.css';
-import netflixText from '../../assets/netflix-text.png';
 
 const LoginPage = () => {
   return (
     <div className='loginPage'>
       <div className="login-inner">
-        <div className="main-netflix-heading">
-          <img src={netflixText} alt="" />
-        </div>
         <div className="main-login-container">
           <div className="login-heading">
             <h1>Sign In</h1>

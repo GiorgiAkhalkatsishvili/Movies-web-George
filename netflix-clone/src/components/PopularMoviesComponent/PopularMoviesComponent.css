@@ -17,6 +17,7 @@
 display: flex;
 gap: 10px;
 overflow-x: scroll;
+padding-right: 34px;
 }
 
 .popularMoviesComponent .inner .cards-list::-webkit-scrollbar{

@@ -11,6 +11,11 @@
   gap: 7px;
 }
 
+.headerComponent .header-inner .main-netflix-heading a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .headerComponent .header-inner .main-netflix-heading p{
 color: #fff;
 font-size: 16px;
@@ -40,6 +45,11 @@ display: flex;
 gap: 20px;
 }
 
+.headerComponent .header-inner .main-header-elements .nav-links-list ul a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .headerComponent .header-inner .main-header-elements .nav-links-list ul li{
 list-style-type: none;
 color: #fff;
@@ -53,6 +63,7 @@ cursor: pointer;
 
 .headerComponent .header-inner .main-header-elements .header-icons-list{
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -79,19 +90,139 @@ cursor: pointer;
 fill: red;
 }
 
-.headerComponent .header-inner .main-header-elements .header-icons-list .bell svg path{
+.headerComponent .header-inner .main-header-elements .header-icons-list .user svg path{
   fill: #fff;
   transition: .4s ease;
 }
 
-.headerComponent .header-inner .main-header-elements .header-icons-list .bell:hover svg path{
+.headerComponent .header-inner .main-header-elements .header-icons-list .user:hover svg path{
 fill: red;
+}
+
+.headerComponent .sidebar-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: #1f1f1f;
+  box-shadow: 13px 0 12px 10px #000;
+  z-index: 999;
+  padding-top: 50px;
+  transition-duration: 500ms;
+}
+
+.headerComponent .sidebar-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 30px;
+}
+
+.headerComponent .sidebar-menu ul li {
+  list-style-type: none;
+  font-size: 20px;
+  color: #e5e5e5;
+  transition: .4s ease;
+  cursor: pointer;
+}
+
+.headerComponent .sidebar-menu ul li:hover{
+  color: red;
+}
+
+.headerComponent .sidebar-menu ul a {
+  text-decoration: none;
+  color: #e5e5e5;
+}
+
+.headerComponent .sidebar-menu .closing-svg {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.headerComponent .sidebar-menu .closing-svg svg {
+  width: 20px;
+  cursor: pointer;
+}
+
+.headerComponent .sidebar-menu .closing-svg svg path{
+  transition: .4s ease;
+}
+
+.headerComponent .sidebar-menu .closing-svg:hover svg path{
+fill: red;
+}
+
+
+.headerComponent .burger-menu {
+  cursor: pointer;
+  display: none;
+}
+
+.headerComponent .burger-menu svg{
+  width: 23px;
+}
+
+.headerComponent .burger-menu svg path{
+  transition: .4s ease;
+}
+
+.headerComponent .burger-menu:hover svg path{
+  fill: red;
+}
+
+.sidebar-menu-icons{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.sidebar-menu-icons .iconOne svg{
+width: 23px;
+cursor: pointer;
+}
+
+.sidebar-menu-icons .search svg path{
+  transition: fill .4s ease;
+}
+
+.sidebar-menu-icons .notification svg path{
+  transition: fill .4s ease;
+}
+
+.sidebar-menu-icons .user svg path{
+  transition: fill .4s ease;
+}
+
+.sidebar-menu-icons .search:hover svg path{
+  fill: red;
+}
+
+.sidebar-menu-icons .notification:hover svg path{
+  fill: red;
+}
+
+.sidebar-menu-icons .user:hover svg path{
+  fill: red;
 }
 
 @media only screen and (max-width: 1030px){
   .headerComponent .header-inner .main-header-elements .nav-links-list{
     display: none;
   }
+
+    .headerComponent .header-inner .main-header-elements .header-icons-list {
+      display: none;
+    }
+
+    .headerComponent .burger-menu {
+      display: flex;
+    }
 }
 
 @media only screen and (max-width: 600px){
@@ -104,4 +235,12 @@ fill: red;
     left: 150px;
     font-size: 15px;
   }
+}
+
+
+@media only screen and (max-width: 450px){
+
+.headerComponent .header-inner .main-header-elements .header-icons-list .iconOne svg{
+  width: 20px;
+}
 }

@@ -42,7 +42,7 @@ position: absolute;
 .login-inner .login-inputs{
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
   padding: 0 20px;
   margin-top: 40px;
 }
@@ -67,7 +67,7 @@ position: absolute;
 .login-inner .main-login-container .login-btn{
   display: flex;
   justify-content: center;
-  padding: 20px 20px 10px;
+  padding: 30px 20px 40px;
 }
 
 .login-inner .main-login-container .login-btn button{
@@ -102,6 +102,10 @@ position: absolute;
 }
 
 @media only screen and (max-width: 450px){
+  .login-inner .main-login-container{
+    margin-top: 50px;
+  }
+
   .loginPage .login-inner{
     display: flex;
     justify-content: center;

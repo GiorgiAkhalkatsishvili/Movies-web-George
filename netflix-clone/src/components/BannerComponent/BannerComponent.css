@@ -27,8 +27,8 @@
 }
 
 .bannerComponent .banner-inner .banner-image img{
-  width: 36px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 
 .bannerComponent .banner-inner .banner-image h1{
@@ -120,7 +120,7 @@ cursor: pointer;
 
 .bannerComponent .banner-inner .banner-image img{
   width: 30px;
-  height: 40px;
+  height: 30px;
 }
 
 .bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
@@ -135,5 +135,52 @@ cursor: pointer;
 
 .bannerComponent .banner-btns .btnOne button{
   font-size: 19px;
+}
+}
+
+@media only screen and (max-width: 450px){
+  .bannerComponent .banner-inner{
+    height: auto;
+    width: 100%;
+  }
+
+  .bannerComponent .banner-inner .banner-image img{
+    width: 30px;
+    height: 30px;
+  }
+
+ .bannerComponent .banner-inner .banner-image h1{
+  font-size: 20px;
+ }
+
+ .bannerComponent .banner-inner .banner-headings{
+  padding: 0;
+  padding: 0 0 20px 5px;
+  gap: 10px;
+ }
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text h1{
+  font-size: 30px;
+  text-align: center;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
+  font-size: 14px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bannerComponent .banner-btns{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bannerComponent .banner-btns button svg{
+  width: 25px;
+  height: 25px;
 }
 }

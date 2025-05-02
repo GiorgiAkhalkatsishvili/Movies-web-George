@@ -1,13 +1,14 @@
 import React from 'react'
 import './BannerComponent.css';
 import netflixLogo from '../../assets/netflix-logo.png'
+import logo from '../../assets/nficon2023.ico'
 
 const BannerComponent = () => {
   return (
     <div className='bannerComponent'>
       <div className="banner-inner">
         <div className="banner-image">
-            <img src={netflixLogo} alt="" />
+            <img src={logo} alt="" />
             <h1>SERIES</h1>
           </div>
         <div className="banner-headings">
