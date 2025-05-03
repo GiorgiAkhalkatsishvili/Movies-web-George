@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './CardsComponent.css';
+import { Link } from 'react-router-dom';
 
 const CardsComponent = ({ title, category }) => {
   const [apiData, setApiData] = useState([]);
@@ -30,21 +31,22 @@ const CardsComponent = ({ title, category }) => {
 
   return (
     <div className='cardsComponent'>
-      {title && <h1>{title}</h1>}
+      <div className="cards-title">
+        {title && <h1>{title}</h1>}
+      </div>
       <div className="cards-list">
-        {apiData.map((item, index) => (
-          <div key={index} className="cards">
-            <div className="cards-info">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${item.backdrop_path || item.poster_path}`}
-                alt={item.title || 'Untitled'}
-              />
-              <p>{item.title}</p>
-            </div>
-          </div>
-        ))}
+        {apiData.map((card, index) => (
+        <Link to={`/player/${card.id}`} onClick={() => window.scroll(0, 0)} key={index}>
+        <div className="cards">
+           <div className="cards-info">
+           <img src={`https://image.tmdb.org/t/p/w500${card.backdrop_path || card.poster_path}`} alt={card.title || 'Untitled'}/>
+        <p>{card.title}</p>
       </div>
     </div>
+  </Link>
+))}
+  </div>
+</div>
   );
 };
 

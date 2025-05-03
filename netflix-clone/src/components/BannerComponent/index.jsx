@@ -1,6 +1,5 @@
 import React from 'react'
 import './BannerComponent.css';
-import netflixLogo from '../../assets/netflix-logo.png'
 import logo from '../../assets/nficon2023.ico'
 
 const BannerComponent = () => {

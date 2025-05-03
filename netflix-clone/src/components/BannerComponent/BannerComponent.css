@@ -63,7 +63,6 @@ margin: 0;
 .bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
   color: #fff;
   font-size: 20px;
-  font-family: jung;
   line-height: 24px;
   font-weight: 400;
   margin: 0;
@@ -72,6 +71,7 @@ margin: 0;
 .bannerComponent .banner-btns{
   display: flex;
   gap: 14px;
+  margin-top: 20px;
 }
 
 .bannerComponent .banner-btns button{
@@ -161,22 +161,20 @@ cursor: pointer;
 
 .bannerComponent .banner-inner .banner-headings .banner-main-text h1{
   font-size: 30px;
-  text-align: center;
+  padding-left: 20px;
 }
 
 .bannerComponent .banner-inner .banner-headings .banner-main-paragraph p{
   font-size: 14px;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding-left: 20px;
 }
 
 .bannerComponent .banner-btns{
   display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding-left: 20px;
+  text-align: center;
+  margin-top: 0;
 }
 
 .bannerComponent .banner-btns button svg{

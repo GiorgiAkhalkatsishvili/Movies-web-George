@@ -35,6 +35,15 @@ cursor: pointer;
   height: 100vh;
 }
 
+.playerPage .player-info{
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+margin: auto;
+padding: 0 30px;
+}
+
 @media only screen and (max-width: 600px){
   .playerPage .inner{
     padding-top: 70px;
