@@ -8,9 +8,6 @@
   position: fixed;
 }
 
-.loginPage .login-inner{
-  padding: 30px 100px;
-}
 
 .loginPage .login-inner .main-netflix-heading{
   height: auto;
@@ -23,6 +20,7 @@
 
 .login-inner .main-login-container{
 position: absolute;
+margin-top: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -102,14 +100,23 @@ position: absolute;
 }
 
 @media only screen and (max-width: 450px){
-  .login-inner .main-login-container{
-    margin-top: 50px;
-  }
-
-  .loginPage .login-inner{
+  .login-inner{
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding: auto 20px;
+    height: 100%;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .login-inner .main-login-container{
+    margin: auto;
+    margin: 0 20px;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: none;
   }
 
 }
