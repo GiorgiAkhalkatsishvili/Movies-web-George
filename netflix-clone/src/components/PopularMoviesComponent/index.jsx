@@ -14,7 +14,7 @@ const PopularMoviesComponent = () => {
             <CardsComponent title="Hollywood Movies" category={"popular"} />
         </div>
         <div className="second-cards">
-            <CardsComponent title="Horror Movies" category={"upcoming"} />
+            <CardsComponent title="Adventures" category={"upcoming"} />
         </div>
         <div className="second-cards">
             <CardsComponent title="Action Movies" category="now_playing" />
