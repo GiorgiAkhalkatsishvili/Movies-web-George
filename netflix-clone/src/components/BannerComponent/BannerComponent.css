@@ -107,8 +107,24 @@ cursor: pointer;
     width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
-      height: 400px;
+      /* min-height: 400px; */
+      height: 100%;
   }
+
+    .bannerComponent {
+      box-sizing: border-box;
+      /* padding-top: 100px; */
+    }
+  
+    .bannerComponent .banner-inner {
+      background-image: linear-gradient(to left, transparent, black 150%), url('../../assets/hero_banner.jpg');
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+      height: auto;
+    }
 
     .bannerComponent .banner-inner .banner-image{
       padding-top: 20px;
@@ -139,9 +155,14 @@ cursor: pointer;
 }
 
 @media only screen and (max-width: 450px){
+  .bannerComponent {
+      padding-top: 100px;
+    }
+    
   .bannerComponent .banner-inner{
     height: auto;
     width: 100%;
+    margin: 0;
   }
 
   .bannerComponent .banner-inner .banner-image img{
@@ -182,3 +203,239 @@ cursor: pointer;
   height: 25px;
 }
 }
+
+
+
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bannerComponent {
+  box-sizing: border-box;
+  padding-top: 100px;
+}
+
+.bannerComponent .banner-inner {
+  background-image: linear-gradient(to left, transparent, black 150%), url('../../assets/hero_banner.jpg');
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  height: auto;
+}
+
+.bannerComponent .banner-inner .banner-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 60px;
+  padding-bottom: 100px;
+}
+
+.bannerComponent .banner-inner .banner-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  padding-left: 22px;
+  padding-top: 150px;
+}
+
+.bannerComponent .banner-inner .banner-image img {
+  width: 45px;
+  height: 45px;
+}
+
+.bannerComponent .banner-inner .banner-image h1 {
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text {
+  height: auto;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-text h1 {
+  font-size: 64px;
+  color: #fff;
+  font-family: jung;
+  font-weight: 400;
+  max-width: 390px;
+  text-align: left;
+  margin: 0;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph {
+  margin-top: 26px;
+  max-width: 480px;
+  width: 100%;
+  margin: 0;
+  height: auto;
+}
+
+.bannerComponent .banner-inner .banner-headings .banner-main-paragraph p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.bannerComponent .banner-btns {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.bannerComponent .banner-btns button {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.bannerComponent .banner-btns .btnOne button {
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: #fff;
+  border: solid 1px #fff;
+}
+
+.bannerComponent .banner-btns .btnTwo button {
+  background-color: #898080;
+  border: solid 1px #898080;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.bannerComponent .banner-btns button svg {
+  width: 30px;
+  height: 27px;
+}
+
+@media only screen and (max-width: 600px) {
+  .bannerComponent .banner-inner {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+  }
+
+  .bannerComponent .banner-inner .banner-image {
+    padding-top: 20px;
+  }
+
+  .bannerComponent .banner-inner .banner-headings .banner-main-text h1 {
+    font-size: 45px;
+  }
+
+  .bannerComponent .banner-inner .banner-image img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bannerComponent .banner-inner .banner-headings .banner-main-paragraph p {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+
+  .bannerComponent .banner-btns button svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .bannerComponent .banner-btns .btnOne button {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .bannerComponent .banner-inner {
+    height: auto;
+    width: 100%;
+  }
+
+  .bannerComponent .banner-inner .banner-image img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bannerComponent .banner-inner .banner-image h1 {
+    font-size: 20px;
+  }
+
+  .bannerComponent .banner-inner .banner-headings {
+    padding: 0 0 20px 5px;
+    gap: 10px;
+  }
+
+  .bannerComponent .banner-inner .banner-headings .banner-main-text h1 {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+
+  .bannerComponent .banner-inner .banner-headings .banner-main-paragraph p {
+    font-size: 14px;
+    display: flex;
+    padding-left: 20px;
+  }
+
+  .bannerComponent .banner-btns {
+    display: flex;
+    padding-left: 20px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .bannerComponent .banner-btns button svg {
+    width: 25px;
+    height: 25px;
+  }
+} */
