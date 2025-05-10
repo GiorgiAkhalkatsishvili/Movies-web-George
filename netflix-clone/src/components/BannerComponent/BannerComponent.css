@@ -80,6 +80,7 @@ margin: 0;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .bannerComponent .banner-btns .btnOne button{
@@ -98,8 +99,8 @@ cursor: pointer;
 }
 
 .bannerComponent .banner-btns button svg{
-  width: 37px;
-  height: 33px;
+  width: 35px;
+  height: 28px;
 }
 
 @media only screen and (max-width: 600px) {

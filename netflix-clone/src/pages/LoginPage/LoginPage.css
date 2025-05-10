@@ -87,10 +87,17 @@ margin-top: 50px;
 .login-inner .main-login-container .checkBox-inp{
   padding: 0 20px;
   display: flex;
-  justify-content: space-between;
+  gap: 4px;
   color: #fff;
   align-items: center;
 }
+
+.loginPage .container{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
 
 
 .login-inner .main-login-container .checkBox-inp input[type="checkbox"] {
