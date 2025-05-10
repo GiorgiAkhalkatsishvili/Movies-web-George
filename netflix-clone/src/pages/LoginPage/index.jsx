@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import { login, signup } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [signState, setSignState] = useState("Sign In");
@@ -8,10 +9,11 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const toggleSignState = () => {
     setSignState(prev => prev === "Sign In" ? "Sign Up" : "Sign In");
-    setErrorMessage(''); // Clear error when toggling modes
+    setErrorMessage('');
   };
 
   const user_auth = async (event) => {
@@ -20,8 +22,10 @@ const LoginPage = () => {
       setErrorMessage('');
       if (signState === "Sign In") {
         await login(email, password);
+        navigate('/');
       } else {
         await signup(name, email, password);
+        navigate('/');
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -36,46 +40,49 @@ const LoginPage = () => {
             <h1>{signState}</h1>
           </div>
 
-          <div className="login-inputs">
-            {signState === "Sign Up" && (
+          <form onSubmit={user_auth}>
+            <div className="login-inputs">
+              {signState === "Sign Up" && (
+                <div className="inpOne">
+                  <input
+                    type='text'
+                    placeholder='Your Name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+              )}
+
               <div className="inpOne">
                 <input
-                  type='text'
-                  placeholder='Your Name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  type="email"
+                  placeholder='Email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
+              </div>
+
+              <div className="inpOne">
+                <input
+                  type="password"
+                  placeholder='Password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {errorMessage && (
+              <div style={{ color: 'red', fontSize: '14px', marginTop: '10px' }}>
+                {errorMessage}
               </div>
             )}
 
-            <div className="inpOne">
-              <input
-                type="email"
-                placeholder='Email or Phone Number'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+            <div className="login-btn">
+              <button type='submit'>{signState}</button>
             </div>
+          </form>
 
-            <div className="inpOne">
-              <input
-                type="password"
-                placeholder='Password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {errorMessage && (
-            <div style={{ color: 'red', fontSize: '14px', marginTop: '10px' }}>
-              {errorMessage}
-            </div>
-          )}
-
-          <div className="login-btn">
-            <button onClick={user_auth} type='submit'>{signState}</button>
-          </div>
           <div className="container">
             <div className="checkBox-inp">
               <input type="checkbox" />

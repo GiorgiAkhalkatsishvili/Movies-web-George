@@ -231,6 +231,32 @@ cursor: pointer;
   position: relative;
 }
 
+.headerComponent .loggedIn-user-icon img{
+width: 25px;
+background-color: #fff;
+cursor: pointer;
+border-radius: 50%;
+}
+
+.headerComponent .loggedIn-dropDown{
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  border: solid 1px #333;
+  background-color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.headerComponent .loggedIn-dropDown p{
+color: #fff;
+font-size: 17px;
+margin: 0;
+  padding: 0;
+}
+
+
 @media only screen and (max-width: 1030px){
   .headerComponent .header-inner .main-header-elements .nav-links-list{
     display: none;
