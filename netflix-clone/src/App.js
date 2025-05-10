@@ -42,7 +42,7 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Regular route with no authentication redirection
+
 const AuthCheckRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -83,6 +83,7 @@ function AppContent() {
       {!hideHeader && <HeaderComponent />}
       <ToastContainer theme='dark'/>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route 
           path="/login" 
           element={
@@ -91,12 +92,7 @@ function AppContent() {
             </AuthCheckRoute>
           } 
         />
-
-        {/* Protected routes */}
-        <Route element={<ProtectedRoute><Outlet /></ProtectedRoute>}>
-          <Route path="/" element={<HomePage />} />
           <Route path="/player/:id" element={<PlayerPage />} />
-        </Route>
       </Routes>
       <FooterComponent />
     </>

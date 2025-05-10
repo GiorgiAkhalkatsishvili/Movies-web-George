@@ -39,10 +39,15 @@ const PlayerPage = () => {
         <iframe src={`https://www.youtube.com/embed/${apiData.key}`} width='90%' height='90%' title='trailer' frameborder="0" allowFullScreen></iframe>
       </div>
       <div className="player-info">
-        <p>{apiData.published_at.slice(0,10)}</p>
+          <div className="player-texts">
+          <p>{apiData.published_at.slice(0,10)}</p>
         <p>{apiData.name}</p>
-        <p>{apiData.type}</p>
-      </div>
+          <p>{apiData.type}</p>
+        </div>
+          <div className="player-btn">
+          <button>Add to list</button>
+        </div>
+        </div>
       </div>
     </div>
   )

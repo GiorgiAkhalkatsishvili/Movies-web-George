@@ -14,12 +14,22 @@ const LoginPage = () => {
   const toggleSignState = () => {
     setSignState(prev => prev === "Sign In" ? "Sign Up" : "Sign In");
     setErrorMessage('');
+    setName('');
+    setEmail('');
+    setPassword('');
   };
 
   const user_auth = async (event) => {
     event.preventDefault();
+    setErrorMessage('');
+
+    // ✅ Input validation
+    if (!email.trim() || !password.trim() || (signState === "Sign Up" && !name.trim())) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
     try {
-      setErrorMessage('');
       if (signState === "Sign In") {
         await login(email, password);
         navigate('/');
@@ -28,7 +38,7 @@ const LoginPage = () => {
         navigate('/');
       }
     } catch (error) {
-      setErrorMessage(error.message);
+      setErrorMessage(error.message || 'Authentication failed');
     }
   };
 
@@ -39,7 +49,6 @@ const LoginPage = () => {
           <div className="login-heading">
             <h1>{signState}</h1>
           </div>
-
           <form onSubmit={user_auth}>
             <div className="login-inputs">
               {signState === "Sign Up" && (
@@ -52,7 +61,6 @@ const LoginPage = () => {
                   />
                 </div>
               )}
-
               <div className="inpOne">
                 <input
                   type="email"
@@ -61,7 +69,6 @@ const LoginPage = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
               <div className="inpOne">
                 <input
                   type="password"
@@ -71,18 +78,15 @@ const LoginPage = () => {
                 />
               </div>
             </div>
-
             {errorMessage && (
               <div style={{ color: 'red', fontSize: '14px', marginTop: '10px' }}>
                 {errorMessage}
               </div>
             )}
-
             <div className="login-btn">
               <button type='submit'>{signState}</button>
             </div>
           </form>
-
           <div className="container">
             <div className="checkBox-inp">
               <input type="checkbox" />
@@ -90,7 +94,6 @@ const LoginPage = () => {
             </div>
             <div className="login-switch">
               <p>
-                {signState === "Sign In" ? '' : ''}
                 <span
                   onClick={toggleSignState}
                   style={{ cursor: 'pointer', color: '#fff', fontSize: '17px' }}

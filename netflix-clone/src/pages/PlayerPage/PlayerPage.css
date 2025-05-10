@@ -35,13 +35,26 @@ cursor: pointer;
   height: 100vh;
 }
 
-.playerPage .player-info{
+.playerPage .player-info .player-texts{
   color: #fff;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
 margin: auto;
 padding: 0 30px;
+}
+
+.playerPage .player-info .player-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.playerPage .player-info .player-btn button{
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: solid 1px #333;
+
 }
 
 @media only screen and (max-width: 600px){
@@ -66,7 +79,6 @@ padding: 0 30px;
 
 .playerPage .player-info{
  padding: 0 5px 0 5px;
- margin-bottom: 200px;
  gap: 10px;
  text-align: center;
  font-size: 14px;
