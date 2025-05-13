@@ -16,6 +16,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const dataBase = getFirestore(app);
 
+const formatErrorMessage = (error) => {
+  if (error.message && error.message.includes('/')) {
+    // Extract the part after the slash and before any closing parentheses
+    const errorCode = error.message.split('/')[1].split(')')[0];
+    return errorCode.replace(/-/g, ' ');
+  }
+  return error.message;
+};
+
 const signup = async (name, email, password) => {
   try {
     const response = await createUserWithEmailAndPassword(auth, email, password);
@@ -26,18 +35,22 @@ const signup = async (name, email, password) => {
       authProvider: 'local',
       email,
     });
+    return user; // Return the user object on success
   } catch (error) {
     console.error(error);
-    toast.error(error.message.split('/')[1].split('-').join(" "));
+    toast.error(formatErrorMessage(error));
+    throw error;
   }
 };
 
 const login = async (email, password) => {
   try {
-    await signInWithEmailAndPassword(auth, email, password);
+    const response = await signInWithEmailAndPassword(auth, email, password);
+    return response.user;
   } catch (error) {
     console.error(error);
-    toast.error(error.message.split('/')[1].split('-').join(" "));
+    toast.error(formatErrorMessage(error));
+    throw error;
   }
 };
 

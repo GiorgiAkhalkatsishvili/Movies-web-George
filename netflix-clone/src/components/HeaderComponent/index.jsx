@@ -187,12 +187,15 @@ const HeaderComponent = () => {
           </div>
           <div className="loggedIn-dropDown" 
             ref={dropDownRef}
-            style={{ display: dropDown ? 'block' : 'none' }}
-            onClick={() => {
+            style={{ display: dropDown ? 'block' : 'none' }}>
+            <div className="drop-down-texts">
+             <p>Profile</p>
+            <p>My List</p>
+              <p onClick={() => {
               logout();
               setDropDown(false);
-            }}>
-             <p>Log Out of Netflix</p>
+            }}>Log Out of Netflix</p>
+             </div>
           </div>
         </div>
       </div>

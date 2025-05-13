@@ -1,5 +1,4 @@
-
-.playerPage{
+.playerPage {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,79 +7,94 @@
   background-color: #181717;
 }
 
-.playerPage .inner{
-  margin-top: 150px;
+.playerPage .inner {
+  margin-top: 100px;
 }
 
-.playerPage .arrow-svg .icon{
+.playerPage .arrow-svg .icon {
   padding-left: 20px;
 }
 
-.playerPage .arrow-svg{
+.playerPage .arrow-svg {
   display: flex;
   gap: 20px;
 }
 
-.playerPage .arrow-svg svg{
-width: 40px;
-border: solid 1px #fff;
-border-radius: 50%;
-padding: 6px;
-cursor: pointer;
+.playerPage .arrow-svg svg {
+  width: 40px;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
 }
 
-.playerPage iframe{
+.playerPage iframe {
   border-radius: 12px;
-  max-height: 650px;
+  max-height: 600px;
   height: 100vh;
 }
 
-.playerPage .player-info .player-texts{
+.playerPage .player-info .player-texts {
   color: #fff;
   display: flex;
   justify-content: space-between;
   width: 100%;
-margin: auto;
-padding: 0 30px;
+  max-width: 90%;
+  margin: auto;
+  padding: 0 30px;
+  gap: 15px;
 }
 
-.playerPage .player-info .player-btn{
+.playerPage .player-info .player-btn {
   display: flex;
   justify-content: center;
+  max-width: 90%;
+  margin: auto;
 }
 
-.playerPage .player-info .player-btn button{
-  padding: 8px;
-  border-radius: 12px;
+.playerPage .player-info .player-btn button {
+  padding: 12px 25px;
+  border-radius: 4px;
   cursor: pointer;
-  border: solid 1px #333;
-
+  border: solid 1px #e50914;
+  background: #e50914;
+  color: #fff;
+  font-size: 18px;
 }
 
-@media only screen and (max-width: 600px){
-  .playerPage .inner{
-   margin: 0;
-   position: absolute;
-   top: 20px;
-   width: 100%;
+@media only screen and (max-width: 600px) {
+  .playerPage .inner {
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    width: 100%;
   }
 
-  .playerPage .icon{
+  .playerPage .icon {
     position: absolute;
     left: 0;
   }
-    .playerPage iframe{
-      margin-top: 60px;
-    }
-  .playerPage .arrow-svg{
+
+  .playerPage iframe {
+    margin-top: 60px;
+  }
+
+  .playerPage .arrow-svg {
     flex-direction: column;
     align-items: center;
   }
 
-.playerPage .player-info{
- padding: 0 5px 0 5px;
- gap: 10px;
- text-align: center;
- font-size: 14px;
+  .playerPage .player-info {
+    padding: 0 5px 0 5px;
+    gap: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
 }
+
+@media only screen and (max-width: 450px){
+  .playerPage .player-info .player-texts{
+    padding: 0 10px;
+    gap: 5px;
+  }
 }

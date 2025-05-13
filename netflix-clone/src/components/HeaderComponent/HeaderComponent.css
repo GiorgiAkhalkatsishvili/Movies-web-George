@@ -249,11 +249,19 @@ border-radius: 50%;
   cursor: pointer;
 }
 
+.headerComponent .drop-down-texts{
+  display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .headerComponent .loggedIn-dropDown p{
 color: #fff;
 font-size: 17px;
 margin: 0;
   padding: 0;
+  border-bottom: solid 1px #e5e5e5;
+  padding-bottom: 5px;
 }
 
 
