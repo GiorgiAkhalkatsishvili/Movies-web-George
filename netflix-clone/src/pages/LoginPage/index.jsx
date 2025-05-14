@@ -23,7 +23,6 @@ const LoginPage = () => {
     event.preventDefault();
     setErrorMessage('');
 
-    // ✅ Input validation
     if (!email.trim() || !password.trim() || (signState === "Sign Up" && !name.trim())) {
       setErrorMessage('Please fill in all required fields.');
       return;

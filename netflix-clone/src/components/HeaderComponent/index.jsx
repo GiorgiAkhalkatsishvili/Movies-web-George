@@ -103,7 +103,7 @@ const HeaderComponent = () => {
               <li>TV Shows</li>
               <li>Movies</li>
               <li>New & Popular</li>
-              <li>My List</li>
+              <Link to='/list'><li>My List</li></Link>
               <li>Audio & Subtitles</li>
             </ul>
           </div>
@@ -152,7 +152,7 @@ const HeaderComponent = () => {
                 <li onClick={closeMenu}>TV Shows</li>
                 <li onClick={closeMenu}>Movies</li>
                 <li onClick={closeMenu}>New & Popular</li>
-                <li onClick={closeMenu}>My List</li>
+                <Link to='/list'><li onClick={closeMenu}>My List</li></Link>
                 <li onClick={closeMenu}>Audio & Subtitles</li>
               </ul>
               <div className="sidebar-menu-icons">

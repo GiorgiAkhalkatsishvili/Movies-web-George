@@ -3,7 +3,6 @@
   display: flex;
   gap: 10px;
   overflow-x: scroll;
-  /* padding-right: 34px; */
 }
 
 .cardsComponent .cards-title h1{

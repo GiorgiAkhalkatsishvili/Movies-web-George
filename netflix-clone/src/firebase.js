@@ -18,7 +18,6 @@ const dataBase = getFirestore(app);
 
 const formatErrorMessage = (error) => {
   if (error.message && error.message.includes('/')) {
-    // Extract the part after the slash and before any closing parentheses
     const errorCode = error.message.split('/')[1].split(')')[0];
     return errorCode.replace(/-/g, ' ');
   }
