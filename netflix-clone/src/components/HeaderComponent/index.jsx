@@ -190,7 +190,7 @@ const HeaderComponent = () => {
             style={{ display: dropDown ? 'block' : 'none' }}>
             <div className="drop-down-texts">
              <p>Profile</p>
-            <p>My List</p>
+             <Link onClick={()=>setDropDown(false)} to='/list'><p>My List</p></Link>
               <p onClick={() => {
               logout();
               setDropDown(false);

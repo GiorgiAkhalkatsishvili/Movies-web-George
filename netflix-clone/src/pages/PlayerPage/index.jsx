@@ -104,6 +104,7 @@ const PlayerPage = () => {
         overview: apiData.overview,
         poster_path: apiData.poster_path,
         release_date: apiData.release_date,
+        trailerType: apiData.trailerType,
         userId: user.uid
       };
       

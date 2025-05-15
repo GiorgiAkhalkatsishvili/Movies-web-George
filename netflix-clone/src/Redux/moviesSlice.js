@@ -1,23 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  movies: [],
-  addedMovies: [],
-};
-
-const movieSlice = createSlice({
+const moviesSlice = createSlice({
   name: 'movie',
-  initialState,
+  initialState: {
+    addedMovies: [],
+  },
   reducers: {
-    setAddedMovies(state, action) {
-      const exists = state.addedMovies.some(item => item.id === action.payload.id);
+    setAddedMovies: (state, action) => {
+      const exists = state.addedMovies.find(movie => movie.id === action.payload.id);
       if (!exists) {
-        state.addedMovies.push({ ...action.payload });
+        state.addedMovies.push(action.payload);
       }
     },
-  },
+    removeMovie: (state, action) => {
+      state.addedMovies = state.addedMovies.filter(movie => movie.id !== action.payload);
+    }
+  }
 });
 
-export const { setAddedMovies } = movieSlice.actions;
+export const { setAddedMovies, removeMovie } = moviesSlice.actions;
+export default moviesSlice.reducer;
 
-export default movieSlice.reducer;

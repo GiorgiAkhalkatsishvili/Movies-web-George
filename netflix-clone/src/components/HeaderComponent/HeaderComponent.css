@@ -212,21 +212,6 @@ cursor: pointer;
 }
 
 
-.tooltip {
-  position: absolute;
-  bottom: 30px;
-  /* Adjust this to position the tooltip */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .user-drop-down {
   position: relative;
 }
@@ -264,6 +249,9 @@ margin: 0;
   padding-bottom: 5px;
 }
 
+.headerComponent .loggedIn-dropDown a{
+  text-decoration: none;
+}
 
 @media only screen and (max-width: 1030px){
   .headerComponent .header-inner .main-header-elements .nav-links-list{
