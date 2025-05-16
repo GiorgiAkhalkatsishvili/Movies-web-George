@@ -14,10 +14,12 @@ const moviesSlice = createSlice({
     },
     removeMovie: (state, action) => {
       state.addedMovies = state.addedMovies.filter(movie => movie.id !== action.payload);
-    }
+    },
+    clearAddedMovies: (state) => {
+      state.addedMovies = [];
+    },
   }
 });
 
-export const { setAddedMovies, removeMovie } = moviesSlice.actions;
+export const { setAddedMovies, removeMovie, clearAddedMovies } = moviesSlice.actions;
 export default moviesSlice.reducer;
-

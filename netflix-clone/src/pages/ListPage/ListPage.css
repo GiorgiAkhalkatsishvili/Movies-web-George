@@ -81,3 +81,15 @@ padding-bottom: 8px;
   justify-content: space-between;
   width: 100%;
 }
+
+@media only screen and (max-width: 450px){
+  .listPage .movie-list .movie-type p{
+    display: none;
+  }
+
+  .listPage .movie-description{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

@@ -4,14 +4,20 @@ import netflixText from '../../assets/netflix-text.png';
 import { Link } from 'react-router-dom';
 import { login } from '../../firebase';
 import loggedInUser from '../../assets/user.png'
+import { clearAddedMovies } from '../../Redux/moviesSlice';
 import { logout } from '../../firebase';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HeaderComponent = () => {
   const [sidebar, setSidebar] = useState(false);
   const sidebarMenuRef = useRef();
   const [dropDown, setDropDown] = useState(false);
+  const [notificationDrop, setNotificationDrop] = useState(false);
+  const addedMovies = useSelector((state) => state.movie.addedMovies);
+  const notificationRef = useRef();
   const dropDownRef = useRef();
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState(null);
 
@@ -34,6 +40,10 @@ const HeaderComponent = () => {
   const toggleDropDown = () => {
     setDropDown(!dropDown);
   };
+
+  const toggleNotificationDrop = () => {
+    setNotificationDrop(!notificationDrop);
+  }
 
   useEffect(() => {
     const handleClickOutsideSidebar = (event) => {
@@ -72,6 +82,26 @@ const HeaderComponent = () => {
       document.removeEventListener('mousedown', handleClickOutsideDropdown);
     };
   }, [dropDown]);
+
+
+  useEffect(() => {
+    const handleClickOutsideNotification = (event) => {
+      if (notificationRef.current && !notificationRef.current.contains(event.target) && 
+          !event.target.closest('.notification')) {
+        setNotificationDrop(false);
+      }
+    };
+
+    if (notificationDrop) {
+      document.addEventListener('mousedown', handleClickOutsideNotification);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutsideNotification);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideNotification);
+    };
+  }, [notificationDrop]);
 
   const UserIcon = ({ onClick }) => (
     <div onClick={onClick} className="iconOne user">
@@ -113,13 +143,13 @@ const HeaderComponent = () => {
                 <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill='#fff'/>
               </svg>
             </div>
-            <div className="iconOne notification">
+            <div onClick={toggleNotificationDrop} className="iconOne notification">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" fill='#fff'/>
               </svg>
             </div>
             {user ? (
-                <LoggedInUserIcon onClick={toggleDropDown} />
+              <LoggedInUserIcon onClick={toggleDropDown} />
             ) : (
               <Link to='/login'>
                 <UserIcon />
@@ -161,7 +191,12 @@ const HeaderComponent = () => {
                     <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill='#e5e5e5'/>
                   </svg>
                 </div>
-                <div onClick={closeMenu} className="iconOne notification">
+                <div
+                  onClick={() => {
+                    closeMenu();
+                    toggleNotificationDrop();
+                  }}
+                  className="iconOne notification">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" fill='#e5e5e5'/>
                   </svg>
@@ -194,9 +229,39 @@ const HeaderComponent = () => {
               <p onClick={() => {
               logout();
               setDropDown(false);
+              dispatch(clearAddedMovies());  
             }}>Log Out of Netflix</p>
              </div>
           </div>
+          <div className="notification-dropDown"
+  ref={notificationRef}
+  style={{ display: notificationDrop ? 'block' : 'none' }}>
+  {addedMovies.length === 0 ? (
+    <div className="drop-down-texts">
+      <p className='notification-text'>No new notifications</p>
+    </div>
+  ) : (
+    <div className="notification-content">
+      <div className="main-titles">
+      <h4>Recently Added:</h4>
+      <Link onClick={()=>setNotificationDrop(false)} to='/list'><h4 id='list-link'>See All</h4></Link>
+      </div>
+      {addedMovies.map((movie, index) => (
+        <div key={index} className="notification-movie-item">
+          <div className="notification-movie-img">
+            <img 
+              src={`https://image.tmdb.org/t/p/w92${movie.poster_path || movie.backdrop_path}`} 
+              alt='movie image could not load' 
+            />
+          </div>
+          <div className="notification-movie-info">
+            <p className="notification-movie-title">{movie.title + ' has been added to the list'}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
         </div>
       </div>
     </div>
