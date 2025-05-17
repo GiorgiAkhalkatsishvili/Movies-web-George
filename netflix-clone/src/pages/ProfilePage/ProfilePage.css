@@ -1,0 +1,149 @@
+
+.profilePage{
+  height: 100vh;
+  background-color: #181717;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePage .inner{
+  max-width: 420px;
+  width: 100%;
+}
+
+.profilePage .inner .main-heading h1{
+  color: #fff;
+  font-size: 34px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.profilePage .inner .main-heading hr{
+  margin: 0;
+}
+
+.inner .main-user-content{
+  display: flex;
+  gap: 13px;
+  padding-top: 20px;
+}
+
+.inner .main-user-content .user-img img{
+  max-width: 130px;
+  width: 100%;
+}
+
+.inner .main-user-content .user-info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  max-width: 400px;
+    width: 100%;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.inner .main-user-content .user-info .user-inner{
+  padding-top: 30px;
+  width: 100%;
+}
+
+.inner .main-user-content .user-info .user-inputs{
+  display: flex;
+  gap: 5px;
+}
+
+.inner .main-user-content .user-info .inputOne{
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.inner .main-user-content .user-info .inputTwo{
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.inner .main-user-content .user-info .inputTwo input[type="checkbox"]{
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: solid 1px #666666;
+}
+
+.inner .main-user-content .user-info .inputOne input{
+  background-color: #666666;
+  border: solid 1px #666666;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+}
+
+.inner .main-user-content .user-info .inputOne input::placeholder{
+  color: #fff;
+}
+
+.inner .main-user-content .language-option{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inner .main-user-content .language-option p{
+  margin: 0;
+}
+
+.inner .main-user-content .language-option select{
+  width: 120px;
+  cursor: pointer;
+  border: solid 1px #fff;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+}
+
+.inner .profile-btns{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.inner .profile-btns .btnOne{
+  width: 100%;
+}
+
+.inner .profile-btns button{
+  width: 100%;
+  padding: 6px 0;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 18px;
+  border: solid 1px #666666;
+  font-weight: 450;
+  background-color: #666666;
+  transition: .4s ease;
+}
+
+.inner .profile-btns button:hover{
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 450px){
+  .profilePage{
+    padding: 0 20px;
+  }
+
+  .inner .profile-btns button{
+    padding: 4px 0;
+    font-size: 16px;
+  }
+}

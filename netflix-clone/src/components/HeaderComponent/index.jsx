@@ -224,7 +224,7 @@ const HeaderComponent = () => {
             ref={dropDownRef}
             style={{ display: dropDown ? 'block' : 'none' }}>
             <div className="drop-down-texts">
-             <p>Profile</p>
+             <Link onClick={()=>setDropDown(false)} to='/profile'><p>Profile</p></Link>
              <Link onClick={()=>setDropDown(false)} to='/list'><p>My List</p></Link>
               <p onClick={() => {
               logout();

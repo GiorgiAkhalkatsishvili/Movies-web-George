@@ -18,6 +18,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import ListPage from './pages/ListPage';
+import ProfilePage from './pages/ProfilePage';
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -86,6 +87,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<ListPage/>} />
+        <Route path="/profile" element={<ProfilePage/>} />
         <Route 
           path="/login" 
           element={
