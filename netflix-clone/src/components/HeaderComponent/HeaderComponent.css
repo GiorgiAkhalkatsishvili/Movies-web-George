@@ -191,6 +191,10 @@ cursor: pointer;
   transition: fill .4s ease;
 }
 
+.sidebar-menu-icons .notification{
+  position: relative;
+}
+
 .sidebar-menu-icons .notification svg path{
   transition: fill .4s ease;
 }
@@ -341,6 +345,25 @@ margin-bottom: 15px;
 padding: 20px 10px;
 }
 
+.headerComponent .header-icons-list .notification-circle{
+  border: solid 1px red;
+  padding: 4px;
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  right: 70px;
+  top: 35px;
+}
+
+.sidebar-menu-list .notification .notification-circle{
+  border: solid 1px red;
+    padding: 4px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 13px;
+}
 
 @media only screen and (max-width: 1030px){
   .headerComponent .header-inner .main-header-elements .nav-links-list{
