@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const moviesSlice = createSlice({
   name: 'movie',
   initialState: {
-    addedMovies: [],
+    addedMovies: JSON.parse(localStorage.getItem('addedMovies')) || [],
   },
   reducers: {
     setAddedMovies: (state, action) => {

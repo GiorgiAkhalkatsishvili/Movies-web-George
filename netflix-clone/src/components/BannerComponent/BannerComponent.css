@@ -105,6 +105,66 @@
   height: 28px;
 }
 
+.bannerComponent .movie-description-container{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bannerComponent .banner-movie-info-tab{
+  color: #fff;
+  border: solid 1px #181717;
+  background-color: #181717;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 500;
+}
+
+.bannerComponent .banner-movie-info-tab h2{
+  color: #fff;
+  padding: 0 10px;
+}
+
+.bannerComponent .banner-movie-info-tab p{
+  color: #fff;
+  padding: 10px 10px 20px 10px;
+  font-size: 17px;
+}
+
+.fade-in {
+  animation: fadeIn 0.1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.bannerComponent .description-header svg{
+  width: 15px;
+  position: absolute;
+    right: 0;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 1000px){
 .bannerComponent .banner-inner{
 height: 100vh;
@@ -193,4 +253,14 @@ height: 100vh;
     width: 25px;
     height: 25px;
   }
+
+ .bannerComponent .movie-description-container{
+  padding: 0 20px;
+  z-index: 999;
+width: 100%;
+ }
+
+ .bannerComponent .description-header svg{
+  margin-right: 10px;
+ }
 }
