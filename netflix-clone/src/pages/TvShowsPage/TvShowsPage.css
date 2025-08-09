@@ -1,0 +1,72 @@
+.tvShowsPage {
+  margin-top: 100px;
+  background-color: #181717;
+  padding-bottom: 80px;
+  padding-left: 25px;
+}
+
+.tvShowsPage .inner .movie-headings {
+  padding: 25px 0 30px 0;
+}
+
+
+.tvShowsPage .inner .main-heading {
+  padding-top: 30px;
+}
+
+.tvShowsPage .inner .main-heading h1 {
+  color: #fff;
+  font-size: 50px;
+  margin: 0;
+}
+
+.tvShowsPage .inner .paragraph p {
+  color: #fff;
+  font-size: 23px;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.tvShowsPage .cards-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.tvShowsPage .cards-title h1 {
+  color: #fff;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 17px;
+  position: relative;
+}
+
+.tvShowsPage .cards-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tvShowsPage .cards p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.tvShowsPage .cards-list a {
+  text-decoration: none;
+}
+
+.tvShowsPage .cards img {
+  max-height: 168px;
+  height: 100vh;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
+  .tvShowsPage .cards-list {
+    padding-right: 0px;
+  }
+}

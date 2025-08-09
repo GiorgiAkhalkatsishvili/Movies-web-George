@@ -130,8 +130,8 @@ const HeaderComponent = () => {
           <div className="nav-links-list">
             <ul>
               <Link to='/'><li>Home</li></Link>
-              <li>TV Shows</li>
-              <li>Movies</li>
+              <Link to='/tvshows'><li>TV Shows</li></Link>
+              <Link to='/movies'><li>Movies</li></Link>
               <li>New & Popular</li>
               <Link to='/list'><li>My List</li></Link>
               <li>Audio & Subtitles</li>

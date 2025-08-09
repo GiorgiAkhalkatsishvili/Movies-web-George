@@ -19,6 +19,8 @@ import { auth } from './firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import ListPage from './pages/ListPage';
 import ProfilePage from './pages/ProfilePage';
+import MoviesPage from './pages/MoviesPage';
+import TvShowsPage from './pages/TvShowsPage';
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -88,6 +90,8 @@ function AppContent() {
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<ListPage/>} />
         <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/movies" element={<MoviesPage/>} />
+        <Route path="/tvshows" element={<TvShowsPage/>} />
         <Route 
           path="/login" 
           element={

@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { initializeApp } from "firebase/app";
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 import { toast } from 'react-toastify';
 
 const firebaseConfig = {
@@ -15,6 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const dataBase = getFirestore(app);
+const storage = getStorage(app);
 
 const formatErrorMessage = (error) => {
   if (error.message && error.message.includes('/')) {
@@ -57,4 +59,4 @@ const logout = () => {
   signOut(auth);
 };
 
-export { auth, dataBase, login, signup, logout };
+export { auth, dataBase, storage, login, signup, logout };
